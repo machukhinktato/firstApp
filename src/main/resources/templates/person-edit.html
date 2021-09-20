@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>person editing</title>
+</head>
+<body>
+<h2>Persons database of MOMIAC</h2>
+
+<div>
+    <h1>edit person</h1>
+    <div th:each="el : ${person}">
+    <form method="post">
+        <input type="text" th:value="${el.name}" name="name" placeholder="enter your name">
+        <input type="text" th:value="${el.second_name }" name="secondName" placeholder="enter second name">
+        <button type="submit">edit person</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

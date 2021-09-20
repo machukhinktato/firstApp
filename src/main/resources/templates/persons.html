@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enums in Thymeleaf</title>
+</head>
+<body>
+<h2>Persons database of MOMIAC</h2>
+<div>
+    <div data-th-each="person : ${persons}">
+        <p data-th-text="${person.name}"/>
+        <p data-th-text="${person.second_name}"/>
+        <a data-th-href="'/person/' + ${person.id}">Детальнее</a>
+        <hr>
+    </div>
+</div>
+<div>
+    <a data-th-href="'/persons/new'">Create a new person</a>
+</div>
+</body>
+</html>

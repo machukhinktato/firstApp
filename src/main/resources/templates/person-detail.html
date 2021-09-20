@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enums in Thymeleaf</title>
+</head>
+<body>
+<h2>Persons detial in db of MOMIAC</h2>
+<div>
+    <div data-th-each="el : ${person}">
+        <p data-th-text="${el.name}"/>
+        <p data-th-text="${el.second_name}"/>
+        <a data-th-href="'/person/' + ${el.id}">Детальнее</a>
+        <a data-th-href="'/person/' + ${el.id} + '/edit'">Редактивроать</a>
+        <form th:action="'/person/' + ${el.id} + '/remove'" method="post">
+            <button type="submit">Удалить</button>
+        </form>
+        <hr>
+    </div>
+</div>
+
+</body>
+</html>
